@@ -17,7 +17,7 @@ const BASE_MUNITIONS = 10;
 const COOLDOWN_ACCROUPI = 0;
 const TIME_ACCROUPI = 3000;
 const BASE_LIFE = 3;
-const SPEED_X_BULLET = 30;
+const SPEED_X_BULLET = 70;
 
 const posssibleMenuActions = {
   PLAY: 'play',
