@@ -23,7 +23,7 @@ let rightArrowPressed = false;
 
 let myGameConfig;
 
-//Traitement appui bouton
+//Traitement appui bouton 
 function keyDownHandler(e) {
   if(e.keyCode == DOWN_ARROW) {
     if (downArrowPressed === true) return;

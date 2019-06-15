@@ -11,6 +11,7 @@ import {
 } from "./model/utils.js";
 import { affichage as affichageGame } from "./affichageGame.js"
 import { launchMenu } from './menu.js'
+import { GameConfig } from "./model/gameConfig.js";
 
 let cowboyList = [];
 let j1FirePressed = false;
@@ -28,6 +29,7 @@ let lastFpsUpdate = 0;
 let isGameEnded = false;
 let stopGame = false;
 
+let GAME_CONFIG = new GameConfig();
 let BASE_MUNITIONS = CONFIG_BASE_MUNITIONS;
 let BASE_LIFE = CONFIG_BASE_LIFE;
 let SPEED_X_BULLET = CONFIG_SPEED_X_BULLET;
@@ -86,7 +88,7 @@ function handleEnterPressed() {
     stopGame = true;
     document.removeEventListener("keydown", keyDownHandler, false);
     document.removeEventListener("keyup", keyUpHandler, false);
-    launchMenu();
+    launchMenu(GAME_CONFIG);
   }
 }
 
@@ -94,7 +96,7 @@ function handleEnterPressed() {
  * Initalise le jeu
  */
 function initGame(gameConfig) {
-  console.log(gameConfig)
+  GAME_CONFIG = gameConfig;
   BASE_LIFE = gameConfig.life;
   BASE_MUNITIONS = gameConfig.munitions;
   SPEED_X_BULLET = gameConfig.speedXBullet;
